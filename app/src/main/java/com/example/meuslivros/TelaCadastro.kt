@@ -32,6 +32,12 @@ class TelaCadastro : AppCompatActivity() {
             startActivity(intent)
         }
 
+        fun exibirSnackbar(mensagem: String) {
+            val rootView = findViewById<View>(android.R.id.content)
+            val snackbar = Snackbar.make(rootView, mensagem, Snackbar.LENGTH_SHORT)
+            snackbar.show()
+
+        }
 
         binding.buttonSalvar.setOnClickListener{
             val nome =binding.editTextText4.text.toString()
@@ -43,17 +49,12 @@ class TelaCadastro : AppCompatActivity() {
             db.livroDao().insert(livro)
             val i= Intent(this, MainActivity::class.java)
             startActivity(i)
-
-
-        }
-
-        fun exibirSnackbar(mensagem: String) {
-            val rootView = findViewById<View>(android.R.id.content)
-            val snackbar = Snackbar.make(rootView, mensagem, Snackbar.LENGTH_SHORT)
-            snackbar.show()
+            exibirSnackbar("Livro salvo com sucesso!")
 
         }
-        exibirSnackbar("Livro salvo com sucesso!")
+
+
+
     }
 
 
