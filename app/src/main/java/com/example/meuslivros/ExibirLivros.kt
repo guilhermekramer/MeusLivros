@@ -33,6 +33,7 @@ class ExibirLivros : AppCompatActivity() {
         binding.textViewNome.text = db.livroDao().listAll()[index].nome
         binding.textViewAutor.text = db.livroDao().listAll()[index].autor
         binding.textViewAno.text = db.livroDao().listAll()[index].nome
+        binding.ratingBarFinal.rating = db.livroDao().listAll()[index].nota.toFloat()
 
 
 
@@ -42,13 +43,14 @@ class ExibirLivros : AppCompatActivity() {
             binding.textViewNome.text = livros[index].nome
             binding.textViewAutor.text = livros[index].autor
             binding.textViewAno.text = livros[index].ano.toString()
+            binding.ratingBarFinal.rating = db.livroDao().listAll()[index].nota.toFloat()
+
         }
 
         fun exibirSnackbar(mensagem: String) {
             val rootView = findViewById<View>(android.R.id.content)
             val snackbar = Snackbar.make(rootView, mensagem, Snackbar.LENGTH_SHORT)
             snackbar.show()
-
         }
 
         binding.button5.setOnClickListener {

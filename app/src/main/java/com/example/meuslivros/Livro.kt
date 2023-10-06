@@ -12,6 +12,7 @@ class Livro(
     val autor: String,
     val ano: Int,
     val nota: String
+
 ){
     @PrimaryKey(autoGenerate = true)
     var id:Long = 0
