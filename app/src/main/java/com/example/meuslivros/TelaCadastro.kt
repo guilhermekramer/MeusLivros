@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.DataBindingUtil
 import androidx.room.Room
 import com.example.meuslivros.databinding.ActivityTelaCadastroBinding
 
@@ -24,6 +25,7 @@ class TelaCadastro : AppCompatActivity() {
             .allowMainThreadQueries().build()
 
 
+        binding= DataBindingUtil.setContentView(this,R.layout.activity_tela_cadastro)
 
         binding.button10.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

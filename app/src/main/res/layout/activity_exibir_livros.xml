@@ -16,12 +16,13 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:text="ANTERIOR"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.909" />
+            app:layout_constraintVertical_bias="0.418" />
 
         <Button
             android:id="@+id/button5"
@@ -57,7 +58,19 @@
             app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewNome"
-            app:layout_constraintVertical_bias="0.032" />
+            app:layout_constraintVertical_bias="0.041" />
+
+        <TextView
+            android:id="@+id/textViewAno"
+            android:layout_width="211dp"
+            android:layout_height="31dp"
+            android:text="Ano"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAutor"
+            app:layout_constraintVertical_bias="0.044" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
