@@ -25,13 +25,15 @@ class MainActivity : AppCompatActivity() {
         val buttonCadastrar = findViewById<Button>(R.id.button2)
         val buttonListarLivros = findViewById<Button>(R.id.button1)
 
-            buttonCadastrar.setOnClickListener {
-                val intent = Intent(this, TelaCadastro::class.java)
-                startActivity(intent)
-            }
-            buttonListarLivros.setOnClickListener {
-                val intent = Intent(this, CadastrarLivros::class.java)
-                startActivity(intent)
+        buttonCadastrar.setOnClickListener {
+            val intent = Intent(this, TelaCadastro::class.java)
+            startActivity(intent)
+        }
+
+        buttonListarLivros.setOnClickListener {
+            val intent = Intent(this, ExibirLivros::class.java)
+            startActivity(intent)
+
             }
 
 

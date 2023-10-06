@@ -6,9 +6,13 @@ import androidx.room.PrimaryKey
 
 @Entity(indices = arrayOf(Index(value = ["id", "nome", "autor", "ano", "nota"])))
 class Livro(
-    @PrimaryKey (autoGenerate = true) val id: Int,
+
+
     val nome: String,
     val autor: String,
     val ano: Int,
-    val nota: Double
-)
+    val nota: String
+){
+    @PrimaryKey(autoGenerate = true)
+    var id:Long = 0
+}
