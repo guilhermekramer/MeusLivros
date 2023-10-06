@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.room.Room
 import com.example.meuslivros.databinding.ActivityTelaCadastroBinding
 
 import androidx.room.Room.databaseBuilder
@@ -15,7 +16,7 @@ class TelaCadastro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_cadastro)
-        val db = databaseBuilder(
+        val db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
             "appdatabase.sqlite"
@@ -40,12 +41,15 @@ class TelaCadastro : AppCompatActivity() {
             db.livroDao().insert(livro)
             val i= Intent(this, MainActivity::class.java)
             startActivity(i)
+
+
         }
 
         fun exibirSnackbar(mensagem: String) {
             val rootView = findViewById<View>(android.R.id.content)
             val snackbar = Snackbar.make(rootView, mensagem, Snackbar.LENGTH_SHORT)
             snackbar.show()
+
         }
         exibirSnackbar("Livro salvo com sucesso!")
     }
